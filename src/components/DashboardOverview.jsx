@@ -1,0 +1,52 @@
+import React from 'react';
+import { Users, UserCheck, AlertCircle, Icon } from 'lucide-react';
+
+
+const StatCard = ({ title, value, percentage, icon: Icon}) => {
+  return (
+    <div className="bg-white p-6 rounded-xl border border-purple-200 shadow-sm flex flex-col justify-between  flex-1">
+      <div className="flex justify-between items-start mb-4">
+        <div>
+          <p className="text-gray-600 text-sm font-medium mb-1">{title}</p>
+          <h3 className="text-2xl font-bold text-gray-900">{value}</h3>
+        </div>
+        <div className="p-2 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-md">
+          <Icon className="w-6 h-6 text-white" />
+        </div>
+      </div>
+      
+      <div className="flex items-center gap-1 mt-2">
+        <span className="text-green-500 text-sm font-semibold">+{percentage}%</span>
+        <span className="text-gray-400 text-sm">Since Last Month</span>
+      </div>
+    </div>
+  );
+};
+
+const DashboardOverview = () => {
+  const stats = [
+    { title: "New Users", value: "560", percentage: "3.44", icon: Users },
+    { title: "Total Providers", value: "150", percentage: "3.44", icon: UserCheck },
+    { title: "Reported Users", value: "150", percentage: "3.44", icon: AlertCircle },
+  ];
+
+  return (
+    <section className=" bg-gray-50">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Overview</h2>
+      
+      <div className="flex flex-wrap gap-6">
+        {stats.map((stat, index) => (
+          <StatCard 
+            key={index}
+            title={stat.title}
+            value={stat.value}
+            percentage={stat.percentage}
+            icon={stat.icon} 
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default DashboardOverview;

@@ -4,7 +4,7 @@ import { Bell, Menu } from 'lucide-react';
 
 const TopNavbar = ({ onMenuClick, userName = "Md. Sabbir Hossain Evan" }) => {
   return (
-    <div className="h-16 md:mt-10  m-3 md:mr-10 mb-6 bg-white border border-purple-400 rounded-xl flex items-center justify-between px-6 sticky top-0 z-30 font-nunito shadow-sm">
+    <div className="h-16 md:mt-10   md:mr-10 mb-6 bg-[#EFE6FD] border border-purple-400 rounded-xl flex items-center justify-between px-6 sticky top-0 z-30 font-nunito shadow-sm">
       
       <div className="flex items-center gap-3">
         <button 

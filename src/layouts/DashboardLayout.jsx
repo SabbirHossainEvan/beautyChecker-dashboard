@@ -1,38 +1,3 @@
-// import React from 'react';
-// import Sidebar from '../components/Sidebar';
-// import { Outlet } from 'react-router';
-// import TopNavbar from '../components/TopNavbar';
-
-// const DashboardLayout = () => {
-//     return (
-//         <div className='flex min-h-screen'>
-//             <section className=' md:sticky md:top-0 md:h-fit w-full'>
-//                 <Sidebar
-                    
-//                 />
-//             </section>
-
-//             <div className="flex flex-col flex-grow">
-
-//                 <section className='sticky w-full top-0 h-fit'>
-//                     <TopNavbar
-                        
-//                     />
-//                 </section>
-
-
-//                 <main className="flex-grow p-4 lg:p-8">
-//                     <Outlet />
-//                 </main>
-
-//             </div>
-//         </div>
-
-        
-//     );
-// }
-
-// export default DashboardLayout;
 
 
 
@@ -49,9 +14,10 @@ const DashboardLayout = () => {
     };
 
     return (
-        <div className='flex min-h-screen bg-gray-50 overflow-x-hidden'>
-            
-            <aside className='z-50'>
+
+        <div className='flex h-screen bg-gray-50 overflow-hidden w-full'>
+
+            <aside className='hidden lg:block  h-full'>
                 <Sidebar 
                     onLogout={handleLogout} 
                     isOpen={isSidebarOpen} 
@@ -59,22 +25,29 @@ const DashboardLayout = () => {
                 />
             </aside>
 
-            {/* 2. Main Content Area */}
-            <div className="flex flex-col flex-grow min-w-0">
 
-                <header className='sticky w-full top-0 z-40 '>
+            <div className="flex flex-col flex-1 h-full overflow-hidden">
+
+
+                <header className='flex-shrink-0'>
                     <TopNavbar 
                         onMenuClick={() => setIsSidebarOpen(true)} 
                     />
                 </header>
 
-                {/* Page Content (Outlet) */}
-                <main className="flex-grow p-4 lg:p-10">
-                    <div className="max-w-7xl mx-auto">
-                        <Outlet />
-                    </div>
+                <main className="flex-1 overflow-y-auto  md:pt-0">
+                    <Outlet />
                 </main>
 
+            </div>
+
+
+            <div className={`lg:hidden fixed inset-0 z-50 ${isSidebarOpen ? 'block' : 'hidden'}`}>
+                 <Sidebar 
+                    onLogout={handleLogout} 
+                    isOpen={isSidebarOpen} 
+                    setIsOpen={setIsSidebarOpen} 
+                />
             </div>
         </div>
     );

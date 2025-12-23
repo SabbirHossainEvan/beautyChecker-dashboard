@@ -4,6 +4,9 @@ import ForgotPassword from "../auth/ForgotPassword";
 import OTPVerification from "../auth/OTPVerification";
 import ResetPassword from "../auth/ResetPassword";
 import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardPage from "../pages/DashboardPage";
+import UserListPage from "../pages/UserListPage";
+import ServicesPage from "../pages/ServicesPage";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +27,21 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <DashboardLayout />
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <DashboardPage />
+      },
+      {
+        path: "users",
+        element: <UserListPage />
+      },
+      {
+        path: "services",
+        element: <ServicesPage />
+      },
+    ] 
   }
 ]);
 
