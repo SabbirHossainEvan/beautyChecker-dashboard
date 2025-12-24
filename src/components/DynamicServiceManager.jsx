@@ -2,14 +2,14 @@ import React, { useState, useRef } from 'react';
 import { X, Plus, Image as ImageIcon } from 'lucide-react';
 
 const DynamicServiceManager = () => {
-  // Main Services State
+
   const [services, setServices] = useState([
     { id: 1, name: 'Hair Salons', img: 'https://via.placeholder.com/80?text=Hair' },
     { id: 2, name: 'Nail Salons', img: 'https://via.placeholder.com/80?text=Nail' },
   ]);
 
   // UI States
-  const [modalType, setModalType] = useState(null); // 'add', 'edit', 'details'
+  const [modalType, setModalType] = useState(null); 
   const [selectedService, setSelectedService] = useState(null);
   
   // Form States

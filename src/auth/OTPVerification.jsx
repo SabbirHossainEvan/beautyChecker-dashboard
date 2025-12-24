@@ -7,7 +7,6 @@ const OTPVerification = () => {
   const [timer, setTimer] = useState(59);
   const inputRefs = useRef([]);
 
-  // Timer logic for "Resend code"
   useEffect(() => {
     if (timer > 0) {
       const interval = setInterval(() => setTimer(timer - 1), 1000);
@@ -22,7 +21,6 @@ const OTPVerification = () => {
     newOtp[index] = value.substring(value.length - 1);
     setOtp(newOtp);
 
-    // Auto-focus to next input
     if (value && index < 5) {
       inputRefs.current[index + 1].focus();
     }
@@ -38,7 +36,6 @@ const OTPVerification = () => {
     e.preventDefault();
     const finalOtp = otp.join("");
     console.log("Verifying OTP:", finalOtp);
-    // Add your verification logic here
   };
 
   return (
@@ -89,7 +86,7 @@ const OTPVerification = () => {
           </Link>
         </form>
 
-        {/* Resend Code Timer */}
+
         <div className="text-sm text-gray-600">
           {timer > 0 ? (
             <p>

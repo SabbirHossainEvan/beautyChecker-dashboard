@@ -20,7 +20,6 @@ const LoginSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    // Add your login logic here
   };
 
   return (
@@ -29,7 +28,6 @@ const LoginSection = () => {
         {/* Logo / Icon */}
         <div className="flex justify-center mb-6">
           <div className="relative">
-            {/* Replace with your actual SVG or Image */}
             <img
               src={loginIcon}
               alt="Login Icon"
