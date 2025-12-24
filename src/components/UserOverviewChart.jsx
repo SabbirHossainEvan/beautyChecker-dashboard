@@ -27,7 +27,7 @@ const data = [
 
 const UserOverviewChart = () => {
   return (
-    <div className="w-full bg-[#EFE6FD1A] p-6  rounded-2xl border border-purple-300 shadow-sm">
+    <div className="w-full bg-[#EFE6FD1A] p-6  rounded-2xl border border-[#6200EE] ">
       {/* Chart Container */}
       <div className="h-[300px] w-full">
         <ResponsiveContainer width="100%" height="100%">
@@ -35,26 +35,26 @@ const UserOverviewChart = () => {
             <defs>
               {/* This creates the purple gradient fill seen in your image */}
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.01}/>
+                <stop offset="5%" stopColor="#6200EE" stopOpacity={0.3}/>
+                <stop offset="95%" stopColor="#6200EE" stopOpacity={0.01}/>
               </linearGradient>
             </defs>
             
             {/* Dotted Grid Lines */}
-            <CartesianGrid strokeDasharray="3 3" vertical={true} horizontal={true} stroke="#e5e7eb" />
+            <CartesianGrid strokeDasharray="3 3" vertical={true} horizontal={true} stroke="#6200EE" />
             
             <XAxis 
               dataKey="name" 
               axisLine={false} 
               tickLine={false} 
-              tick={{ fill: '#9ca3af', fontSize: 12 }} 
+              tick={{ fill: '#6200EE', fontSize: 12 }} 
               dy={10}
             />
             
             <YAxis 
               axisLine={false} 
               tickLine={false} 
-              tick={{ fill: '#9ca3af', fontSize: 12 }} 
+              tick={{ fill: '#6200EE', fontSize: 12 }} 
             />
             
             <Tooltip 
@@ -64,11 +64,11 @@ const UserOverviewChart = () => {
             <Area 
               type="monotone" 
               dataKey="value" 
-              stroke="#7c3aed" 
+              stroke="#6200EE" 
               strokeWidth={3} 
               fillOpacity={1} 
               fill="url(#colorValue)" 
-              dot={{ r: 4, fill: '#6d28d9', strokeWidth: 2, stroke: '#fff' }}
+              dot={{ r: 4, fill: '#6200EE', strokeWidth: 2, stroke: '#6200EE' }}
               activeDot={{ r: 6, strokeWidth: 0 }}
             />
           </AreaChart>
@@ -77,8 +77,8 @@ const UserOverviewChart = () => {
 
       {/* Footer Section */}
       <div className="flex justify-between items-center mt-6">
-        <h2 className="text-xl font-bold text-purple-700">User Overview</h2>
-        <div className="flex items-center gap-2 px-4 py-1 border border-purple-300 rounded-lg text-purple-600 bg-purple-50">
+        <h2 className="text-xl font-bold text-[#6200EE]">User Overview</h2>
+        <div className="flex items-center gap-2 px-4 py-1 border border-[#6200EE] rounded-lg text-[#6200EE] bg-purple-50">
           <span className="text-sm font-medium">2025</span>
           <ChevronDown size={16} />
         </div>

@@ -10,18 +10,18 @@ const UserTable = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-purple-400 bg-white shadow-sm">
+    <div className="w-full overflow-hidden rounded-2xl border border-[#6200EE] bg-white shadow-sm">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           {/* Table Header */}
           <thead>
             <tr className="bg-purple-50">
-              <th className="px-3 py-6 font-bold text-purple-700 text-sm">#ID</th>
-              <th className="px-3 py-6 font-bold text-purple-700 text-sm">User Name</th>
-              <th className="px-3 py-6 font-bold text-purple-700 text-sm">Email</th>
-              <th className="px-3 py-6 font-bold text-purple-700 text-sm">Phone Number</th>
-              <th className="px-3 py-6 font-bold text-purple-700 text-sm">Event Request</th>
-              <th className="px-3 py-6 font-bold text-purple-700 text-sm text-right">Date & Time</th>
+              <th className="px-3 py-6 font-bold text-[#6200EE] text-sm">#ID</th>
+              <th className="px-3 py-6 font-bold text-[#6200EE] text-sm">User Name</th>
+              <th className="px-3 py-6 font-bold text-[#6200EE] text-sm">Email</th>
+              <th className="px-3 py-6 font-bold text-[#6200EE] text-sm">Phone Number</th>
+              <th className="px-3 py-6 font-bold text-[#6200EE] text-sm">Event Request</th>
+              <th className="px-3 py-6 font-bold text-[#6200EE] text-sm text-right">Date & Time</th>
             </tr>
           </thead>
 

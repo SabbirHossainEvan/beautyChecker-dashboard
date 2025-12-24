@@ -7,6 +7,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardPage from "../pages/DashboardPage";
 import UserListPage from "../pages/UserListPage";
 import ServicesPage from "../pages/ServicesPage";
+import PromotionPage from "../pages/PromotionPage";
+import SettingsPage from "../pages/SettingsPage";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <ServicesPage />
+      },
+      {
+        path: "promotion",
+        element: <PromotionPage />
+      },
+      {
+        path: "settings",
+        element: <SettingsPage />
       },
     ] 
   }

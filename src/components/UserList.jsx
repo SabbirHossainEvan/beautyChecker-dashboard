@@ -50,7 +50,7 @@ const UserList = () => {
         <select 
           value={filter}
           onChange={handleFilterChange}
-          className="px-4 py-3 border-2 border-purple-500 rounded-xl bg-purple-50 text-purple-700 font-bold focus:outline-none cursor-pointer"
+          className="px-4 py-3 border-2 border-[#6200EE] rounded-xl bg-purple-50 text-[#6200EE] font-bold focus:outline-none cursor-pointer"
         >
           <option value="All User">All User</option>
           <option value="Only Users">Only Users</option>
@@ -61,16 +61,16 @@ const UserList = () => {
 
         <button 
           onClick={() => setGlobalModalOpen(true)}
-          className="flex gap-1 px-4 py-2 border-2 border-purple-500 rounded-xl bg-purple-50 text-purple-700 font-bold focus:outline-none cursor-pointer"
+          className="flex gap-1 px-4 py-2 border-2 border-[#6200EE] rounded-xl bg-purple-50 text-[#6200EE] font-bold focus:outline-none cursor-pointer"
         >
           <Megaphone size={20} />
           Announcement
         </button>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-purple-400">
+      <div className="overflow-hidden rounded-2xl border border-[#6200EE]">
         <table className="w-full text-left">
-          <thead className="bg-purple-700 text-white font-bold">
+          <thead className="bg-[#6200EE] text-white font-bold">
             <tr>
               <th className="px-6 py-4">#ID</th>
               <th className="px-6 py-4">User Name</th>
@@ -80,7 +80,7 @@ const UserList = () => {
               <th className="px-6 py-4 text-center">Message</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-purple-100">
+          <tbody className="divide-y divide-[#6200EE]">
             {currentUsers.length > 0 ? currentUsers.map((user) => (
               <tr key={user.id} className="hover:bg-purple-50 transition-colors">
                 <td className="px-6 py-4 text-sm text-gray-600">{user.id}</td>
@@ -94,7 +94,7 @@ const UserList = () => {
                 <td className="px-6 py-4 text-center">
                   <button 
                     onClick={() => { setSelectedUser(user); setUserModalOpen(true); }}
-                    className="p-2 text-purple-600 hover:bg-purple-100 rounded-full transition-all"
+                    className="p-2 text-[#6200EE] hover:bg-purple-100 rounded-full transition-all"
                   >
                     <MessageSquare size={22} />
                   </button>
@@ -128,7 +128,7 @@ const UserList = () => {
             <button 
               key={i} 
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 rounded font-bold ${currentPage === i + 1 ? 'bg-purple-700 text-white' : 'text-gray-400 hover:bg-purple-100'}`}
+              className={`px-3 py-1 rounded font-bold ${currentPage === i + 1 ? 'bg-[#6200EE] text-white' : 'text-gray-400 hover:bg-purple-100'}`}
             >
               {i + 1}
             </button>

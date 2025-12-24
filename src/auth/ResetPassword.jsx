@@ -25,7 +25,7 @@ const ResetPassword = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4 font-nunito">
       {/* Main Card */}
-      <div className="w-full max-w-md bg-[#EFE6FD33] rounded-3xl border-2 border-purple-400 p-8 md:p-12 shadow-sm">
+      <div className="w-full max-w-md bg-[#EFE6FD33] rounded-3xl border-2 border-[#6200EE] p-8 md:p-12 shadow-sm">
         {/* Logo Section */}
         <div className="flex justify-center mb-8">
           <div className="relative">
@@ -75,7 +75,7 @@ const ResetPassword = () => {
           <Link to={"/dashboard"}>
             <button
               type="submit"
-              className="w-full py-4 mt-4 bg-gradient-to-r from-purple-700 to-purple-400 text-white font-semibold rounded-2xl hover:opacity-90 transition-opacity shadow-lg text-lg"
+              className="w-full py-4 mt-4 bg-gradient-to-r from-[#6200EE] to-purple-500 text-white font-semibold rounded-2xl hover:opacity-90 transition-opacity shadow-lg text-lg"
             >
               Reset Password
             </button>

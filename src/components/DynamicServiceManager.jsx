@@ -174,7 +174,7 @@ const DynamicServiceManager = () => {
                     </button>
                     <button 
                       onClick={() => setModalType('edit')}
-                      className="flex-1 py-4 bg-gradient-to-r from-purple-600 to-purple-400 text-white rounded-2xl font-bold shadow-lg shadow-purple-200 hover:opacity-90 transition-opacity"
+                      className="flex-1 py-4 bg-gradient-to-r from-[#6200EE] to-purple-500 text-white rounded-2xl font-bold shadow-lg shadow-purple-200 hover:opacity-90 transition-opacity"
                     >
                       Edit
                     </button>
@@ -182,7 +182,7 @@ const DynamicServiceManager = () => {
                 ) : (
                   <button 
                     onClick={handleSave}
-                    className="w-full py-4 bg-gradient-to-r from-purple-600 to-purple-400 text-white rounded-2xl font-bold shadow-lg shadow-purple-200 hover:opacity-90"
+                    className="w-full py-4 bg-gradient-to-r from-[#6200EE] to-purple-500 text-white rounded-2xl font-bold shadow-lg shadow-purple-200 hover:opacity-90"
                   >
                     {modalType === 'add' ? 'Add Service' : 'Save'}
                   </button>
