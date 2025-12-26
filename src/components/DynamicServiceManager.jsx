@@ -108,9 +108,9 @@ const DynamicServiceManager = () => {
             <div className="relative p-6 border-b border-gray-50 flex justify-center">
               <div className="border border-gray-300 rounded-full px-8 py-2">
                 <h2 className="text-lg font-medium text-gray-800">
-                  {modalType === 'add' && 'Service Add Details'}
-                  {modalType === 'edit' && 'Edit Service'}
-                  {modalType === 'details' && 'Service Details'}
+                  {modalType === 'add' && 'Category Add Details'}
+                  {modalType === 'edit' && 'Edit Category'}
+                  {modalType === 'details' && 'Category Details'}
                 </h2>
               </div>
               <button 
@@ -124,7 +124,7 @@ const DynamicServiceManager = () => {
             <div className="p-8 space-y-6">
               {/* Service Name Input */}
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-2">Service Name</label>
+                <label className="block text-sm font-semibold text-gray-600 mb-2">Category Name</label>
                 <input 
                   type="text" 
                   value={tempName}
@@ -184,7 +184,7 @@ const DynamicServiceManager = () => {
                     onClick={handleSave}
                     className="w-full py-4 bg-gradient-to-r from-[#6200EE] to-purple-500 text-white rounded-2xl font-bold shadow-lg shadow-purple-200 hover:opacity-90"
                   >
-                    {modalType === 'add' ? 'Add Service' : 'Save'}
+                    {modalType === 'add' ? 'Add Category' : 'Save'}
                   </button>
                 )}
               </div>

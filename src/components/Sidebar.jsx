@@ -1,19 +1,156 @@
 
 
+
+
+// import React from 'react';
+// import { NavLink, useNavigate } from 'react-router-dom';
+// import { X } from 'lucide-react'; 
+// import loginIcon from '../assets/sidebarLogo.svg';
+// import { Link } from 'react-router';
+
+// const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
+//   const navigate = useNavigate();
+
+
+//   const userData = {
+//     name: "Evan",
+//     role: "Admin",
+//     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" 
+//   };
+
+//   const menuItems = [
+//     { name: 'Dashboard', path: '/dashboard', iconPath: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+//     { name: 'User List', path: '/dashboard/users', iconPath: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" },
+//     { name: 'Services & Category', path: '/dashboard/services', iconPath: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+//     { name: 'Promotion', path: '/dashboard/promotion', iconPath: "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A2.457 2.457 0 013 11.235c0-1.355 1.09-2.454 2.436-2.454H13l5 5H5.436z" },
+//     { name: 'Settings', path: '/dashboard/settings', iconPath: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" },
+//   ];
+
+//   const handleSignOut = () => {
+//     if (onLogout) {
+//       onLogout();
+//       navigate('/');
+//     }
+//   };
+
+//   return (
+//     <>
+//       {isOpen && (
+//         <div 
+//           className="fixed inset-0 bg-black/30 z-40 lg:hidden" 
+//           onClick={() => setIsOpen(false)}
+//         />
+//       )}
+
+//       <div className={`
+//         fixed top-0 left-0 z-50 h-[92%] w-64 bg-[#EFE6FD] border rounded-2xl border-[#6200EE] font-nunito p-5 shadow-lg flex flex-col transition-transform duration-300 ease-in-out
+//         lg:translate-x-0 lg:static lg:mx-10 lg:my-10 
+//         ${isOpen ? 'translate-x-5 my-10 mx-5' : '-translate-x-full'}
+//       `}>
+        
+//         <button 
+//           className="lg:hidden absolute top-4 right-4 text-purple-600"
+//           onClick={() => setIsOpen(false)}
+//         >
+//           <X size={24} />
+//         </button>
+
+//         <div className="flex justify-center mb-10 pt-4">
+//           <img src={loginIcon} alt="Logo" className="w-25 h-25 object-contain" />
+//         </div>
+
+//         <nav className="flex-1 space-y-2 overflow-y-auto pr-2 custom-scrollbar">
+//           {menuItems.map((item) => (
+//             <NavLink
+//               key={item.name}
+//               to={item.path}
+//               end={item.path === '/dashboard'}
+//               onClick={() => setIsOpen(false)}
+//               className={({ isActive }) => `
+//                 w-full flex items-center p-3 rounded-2xl transition-all duration-300 font-bold
+//                 ${isActive 
+//                   ? 'bg-[#EFE6FD] text-[#6200EE] border-2 border-[#6200EE] shadow-[0px_4px_0px_0px_rgba(98,0,238,1)]' 
+//                   : 'text-[#6200EE] hover:bg-white/50 border-2 border-transparent'}
+//               `}
+//             >
+//               <svg className="w-6 h-6 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.iconPath} />
+//               </svg>
+//               <span className="truncate">{item.name}</span>
+//             </NavLink>
+//           ))}
+//         </nav>
+
+//         {/* --- Profile & Sign Out Section --- */}
+//         <div className="mt-auto pt-4 space-y-2 border-t border-[#d8c5f7]">
+          
+//           {/* Profile Quick View */}
+//           <Link to={"/dashboard/profile"}>
+//                     <div className="flex items-center p-2 gap-3 bg-white/40 rounded-2xl border border-transparent hover:border-[#6200EE] transition-all cursor-pointer group"
+//                onClick={() => navigate('/dashboard/settings')}>
+//             <div className="w-10 h-10 rounded-full border-2 border-[#6200EE] overflow-hidden">
+//                 <img src={userData.avatar} alt="User" className="w-full h-full object-cover" />
+//             </div>
+//             <div className="flex flex-col overflow-hidden">
+//                 <span className="text-sm font-bold text-[#6200EE] truncate">{userData.name}</span>
+//                 <span className="text-[10px] font-medium text-purple-500 uppercase tracking-wider">{userData.role}</span>
+//             </div>
+//           </div>
+//           </Link>
+
+
+//           {/* Sign Out Button */}
+
+//           <button 
+//             onClick={handleSignOut}
+//             className="w-full flex items-center mt-2 p-3 text-[#6200EE] font-bold hover:text-red-500 hover:bg-red-50 rounded-2xl transition-all group"
+//           >
+//             <svg className="w-6 h-6 mr-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+//             </svg>
+//             Sign Out
+//           </button>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Sidebar;
+
+
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { X, Megaphone } from 'lucide-react'; 
+import { X, ShieldCheck, Settings } from 'lucide-react'; 
 import loginIcon from '../assets/sidebarLogo.svg';
+import { Link } from 'react-router-dom'; 
 
 const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
   const navigate = useNavigate();
 
+  const userData = {
+    name: "Evan",
+    role: "Admin",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" 
+  };
+
   const menuItems = [
     { name: 'Dashboard', path: '/dashboard', iconPath: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
     { name: 'User List', path: '/dashboard/users', iconPath: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" },
-    { name: 'Services', path: '/dashboard/services', iconPath: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+    { name: 'Services & Category', path: '/dashboard/services', iconPath: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
     { name: 'Promotion', path: '/dashboard/promotion', iconPath: "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A2.457 2.457 0 013 11.235c0-1.355 1.09-2.454 2.436-2.454H13l5 5H5.436z" },
-    { name: 'Settings', path: '/dashboard/settings', iconPath: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" },
+
+    { 
+      name: 'Verification', 
+      path: '/dashboard/verification', 
+      icon: <ShieldCheck size={24} /> 
+    },
+
+    { 
+      name: 'Settings', 
+      path: '/dashboard/settings', 
+      icon: <Settings size={24} /> 
+    },
   ];
 
   const handleSignOut = () => {
@@ -49,7 +186,7 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
           <img src={loginIcon} alt="Logo" className="w-25 h-25 object-contain" />
         </div>
 
-        <nav className="flex-1 space-y-4 overflow-y-auto">
+        <nav className="flex-1 space-y-2 overflow-y-auto pr-2 custom-scrollbar">
           {menuItems.map((item) => (
             <NavLink
               key={item.name}
@@ -57,26 +194,46 @@ const Sidebar = ({ onLogout, isOpen, setIsOpen }) => {
               end={item.path === '/dashboard'}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) => `
-                w-full flex items-center p-4 rounded-2xl transition-all duration-300 font-bold
+                w-full flex items-center p-3 rounded-2xl transition-all duration-300 font-bold
                 ${isActive 
                   ? 'bg-[#EFE6FD] text-[#6200EE] border-2 border-[#6200EE] shadow-[0px_4px_0px_0px_rgba(98,0,238,1)]' 
-                  : 'text-[#6200EE] hover:bg-gray-50 border-2 border-transparent'}
+                  : 'text-[#6200EE] hover:bg-white/50 border-2 border-transparent'}
               `}
             >
-              <svg className="w-6 h-6 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.iconPath} />
-              </svg>
+              <div className="mr-3 flex-shrink-0">
+                {item.iconPath ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.iconPath} />
+                  </svg>
+                ) : (
+                  item.icon
+                )}
+              </div>
               <span className="truncate">{item.name}</span>
             </NavLink>
           ))}
         </nav>
 
-        <div className="mt-auto border-t border-gray-100 pt-4">
+        {/* --- Profile & Sign Out Section --- */}
+        <div className="mt-auto pt-4 space-y-2 border-t border-[#d8c5f7]">
+          
+          <Link to={"/dashboard/profile"} className="block">
+            <div className="flex items-center p-2 gap-3 bg-white/40 rounded-2xl border border-transparent hover:border-[#6200EE] transition-all cursor-pointer group">
+              <div className="w-10 h-10 rounded-full border-2 border-[#6200EE] overflow-hidden">
+                <img src={userData.avatar} alt="User" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex flex-col overflow-hidden">
+                <span className="text-sm font-bold text-[#6200EE] truncate">{userData.name}</span>
+                <span className="text-[10px] font-medium text-purple-500 uppercase tracking-wider">{userData.role}</span>
+              </div>
+            </div>
+          </Link>
+
           <button 
             onClick={handleSignOut}
-            className="w-full flex items-center p-4 text-[#6200EE] font-bold hover:text-purple-700 hover:bg-[#EFE6FD] rounded-2xl transition-all group"
+            className="w-full flex items-center mt-2 p-3 text-[#6200EE] font-bold hover:text-red-500 hover:bg-red-50 rounded-2xl transition-all group"
           >
-            <svg className="w-6 h-6 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 mr-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
             Sign Out

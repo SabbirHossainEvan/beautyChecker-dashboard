@@ -9,6 +9,9 @@ import UserListPage from "../pages/UserListPage";
 import ServicesPage from "../pages/ServicesPage";
 import PromotionPage from "../pages/PromotionPage";
 import SettingsPage from "../pages/SettingsPage";
+import ProfilePage from "../pages/ProfilePage";
+import PasswordPage from "../pages/PasswordPage";
+import VerificationSection from "../components/VerificationSection";
 
 const router = createBrowserRouter([
   {
@@ -48,8 +51,20 @@ const router = createBrowserRouter([
         element: <PromotionPage />
       },
       {
+        path: "verification",
+        element: <VerificationSection />
+      },
+      {
         path: "settings",
         element: <SettingsPage />
+      },
+      {
+        path: "profile",
+        element: <ProfilePage />
+      },
+      {
+        path: "password",
+        element: <PasswordPage />
       },
     ] 
   }
